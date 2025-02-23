@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<br lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vovinam Quảng Sơn</title>
+    <!-- Bản quyền © 2025 Câu Lạc Bộ. Mọi quyền được bảo lưu. -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background: linear-gradient(45deg, #0077be, #005a9c);
+            font-family: Arial, sans-serif;
+            user-select: none;
+        }
+        .banner {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            height: 350px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .banner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .banner h1 {
+            font-size: 36px;
+            color: gold;
+            margin-bottom: 15px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .banner p {
+            font-size: 18px;
+            color: gold;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .join-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: white;
+            color: #0077be;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .join-btn:hover {
+            background: #0077be;
+            color: white;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && (event.key === 'u' || event.key === 's' || event.key === 'c' || event.key === 'p')) {
+                event.preventDefault();
+            }
+        });
+        
+        function blockScreenCapture() {
+            document.addEventListener('keyup', function(event) {
+                if (event.key === 'PrintScreen') {
+                    navigator.clipboard.writeText('Chụp màn hình bị vô hiệu hóa!');
+                    alert('Chụp màn hình bị cấm trên trang này!');
+                }
+            });
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'PrintScreen') {
+                    event.preventDefault();
+                }
+            });
+            
+            // Chặn chụp màn hình trên điện thoại
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    alert('Chụp màn hình bị cấm trên trang này!');
+                }
+            });
+        }
+        
+        function disableDevTools() {
+            document.addEventListener('keydown', function(event) {
+                if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C')) || (event.ctrlKey && event.key === 'U')) {
+                    event.preventDefault();
+                    alert('Chức năng này bị vô hiệu hóa!');
+                }
+            });
+        }
+        
+        window.onload = function() {
+            blockScreenCapture();
+            disableDevTools();
+        };
+    </script>
+</head>
+    <br>
+    <div class="banner">
+        <h1>Chào mừng đến với Câu Lạc Bộ Vovinam Quảng sơn!</h1>
+        <p>Hãy tham gia ngay để trải nghiệm tự vệ chính đáng.</p>
+        <a href="https://www.facebook.com/people/Clb-Vovinam-Qu%E1%BA%A3ng-S%C6%A1n-%C4%90%C4%83k-N%C3%B4ng/100063857284483/" class="join-btn">Tham Gia Ngay</a>
+    </div>
+    <footer>
+        <p style="text-align: center; color: gold; font-size: 14px; margin-top: 20px;">
+            Bản quyền © 2025 devtronghisrory. do not copy code.
+        </p>
+    </footer>
+    </br>
+</body>
+</html>
